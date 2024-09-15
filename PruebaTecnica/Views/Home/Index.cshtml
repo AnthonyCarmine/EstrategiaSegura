@@ -1,0 +1,74 @@
+﻿Index.cshtml
+<link rel="stylesheet" href="~/css/home.css" />
+
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["TabsType"] = "Home";
+}
+
+<partial name="~/Views/Shared/Components/infoDivComponent.cshtml" />
+
+<div class="container">
+    <h3 class="title-color">Sedes Recreativas y Apartamentos</h3>
+    <partial name="~/Views/Shared/Components/TabsComponent.cshtml" />
+    <div class="content active">
+        <div class="table-container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Tipo</th>
+                        <th>Ubicación</th>
+                        <th>Seleccionar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="d-flex justify-content-center align-items-center gap-5">
+                                <img src="~/images/edificio-sede.webp" alt="Reservas" style="max-height: 100px; width: auto;">
+                                <span>Nombre</span>
+                            </div>
+                        </td>
+                        <td>Descripcion</td>
+                        <td>Tipo</td>
+                        <td>Ubicacion</td>
+                        <td>
+                            <a asp-controller="Home" asp-action="Fechas" class="btn btn-gradient">Seleccionar</a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="table-container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Disponibilidad</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2023</td>
+                        <td>Disponible</td>
+                        <td><button class="btn btn-gradient">Reservar</button></td>
+                    </tr>
+                    <tr>
+                        <td>02/01/2023</td>
+                        <td>No disponible</td>
+                        <td><button class="btn btn-gradient" disabled>Reservar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

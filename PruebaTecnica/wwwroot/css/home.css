@@ -1,0 +1,87 @@
+/* wwwroot/css/home.css */
+.btn-gradient {
+    background: linear-gradient(45deg, #B32730, #9F1B26);
+    border: none;
+    color: white;
+}
+.btn-gradient:hover {
+    background: linear-gradient(45deg, #9F1B26, #B32730);
+}
+.title-color {
+    color: #BF353D;
+    font-size: 1.5em;
+    cursor: pointer; 
+}
+.info-div {
+    display: flex;
+    gap: 10px;
+    align-items: center; 
+    justify-content: flex-start; 
+    height: 30px;
+}
+.info-div p {
+    margin: 0; 
+    line-height: 30px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.info-div p:hover {
+    background-color: #d3d3d3;
+}
+.info-div p.active {
+    font-weight: bold;
+    border-bottom: 2px solid #BF353D;
+    background-color: #d3d3d3;
+}
+.div-fuera {
+    background-color: #E0E0E0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+}
+.content {
+    display: none;
+}
+.content.active {
+    display: block;
+}
+.table-container {
+    background-color: #EEEEEE;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.table {
+    width: auto;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+.table th, .table td {
+    padding: 8px 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+.table th:last-child, .table td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}
+.table thead {
+    background-color: #DDDDDD;
+    margin-top: 0;
+    padding-top: 0;
+    border-bottom: none;
+}
+.table thead th {
+    border-bottom: none;
+}
+.table tbody tr:nth-child(odd) {
+    background-color: #EEEEEE !important;
+}
+.table tbody tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+

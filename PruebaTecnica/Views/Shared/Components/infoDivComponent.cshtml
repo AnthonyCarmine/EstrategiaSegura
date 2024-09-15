@@ -1,0 +1,32 @@
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+}
+
+<link rel="stylesheet" href="~/css/infoDiv.css" />
+
+<div class="div-fuera">
+    <div class="container info-div">
+        <p class="@(currentController == "Home" && (currentAction == "Index" || currentAction == "Fechas") ? "active" : "")">
+            <a asp-controller="Home" asp-action="Index">Sedes recreativas y apartamentos</a>
+        </p>
+        @if (!(currentController == "Home" && (currentAction == "Fechas" || currentAction == "Reservas")))
+        {
+            <p class="@(currentController == "Login" || currentController == "Register" ? "active" : "")">
+                <a asp-controller="Login" asp-action="Login">Ingreso y registro</a>
+            </p>
+        }
+        @if (currentController == "Home" && (currentAction == "Fechas" || currentAction == "Reservas"))
+        {
+            <p class="@(currentAction == "Reservas" ? "active" : "")">
+                <a asp-controller="Home" asp-action="Reservas">Mis Reservas</a>
+            </p>
+            <p class="@(currentController == "Account" && currentAction == "Update" ? "active" : "")">
+                <a asp-controller="Account" asp-action="Update">Actualizar Datos</a>
+            </p>
+            <p>
+                <a asp-controller="Home" asp-action="Index">Cerrar Sesión</a>
+            </p>
+        }
+    </div>
+</div>

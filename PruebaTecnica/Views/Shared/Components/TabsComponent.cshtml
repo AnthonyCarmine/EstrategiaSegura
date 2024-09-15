@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="~/css/tabs.css" />
+
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+    var tabsType = ViewData["TabsType"]?.ToString();
+}
+
+<div class="tabs">
+    @if (tabsType == "Home")
+    {
+        <a asp-controller="Home" asp-action="Index" class="@(currentController == "Home" && currentAction == "Index" ? "active" : "")">Sedes recreativas y apartamentos</a>
+        <a asp-controller="Login" asp-action="Login" class="@(currentController == "Home" && currentAction == "Fechas" ? "active" : "")">Seleccione sus fechas</a>
+    }
+    else if (tabsType == "Register")
+    {
+        <a asp-controller="Register" asp-action="Index" class="register-tab @(currentController == "Register" && currentAction == "Index" ? "active" : "")">Registro Usuario</a>
+    }
+    else if (tabsType == "Fechas")
+    {
+        <a asp-controller="Home" asp-action="Index" class="@(currentController == "Home" && currentAction == "Index" ? "active" : "")">Sedes recreativas y apartamentos</a>
+        <a asp-controller="Home" asp-action="Fechas" class="@(currentController == "Home" && currentAction == "Fechas" ? "active" : "")">Seleccione sus fechas</a>
+    }
+    else if (tabsType == "Reservas")
+    {
+        <a asp-controller="Home" asp-action="Reservas" class="@(currentController == "Home" && currentAction == "Reservas" ? "active" : "")">Mis Reservas</a>
+    }
+</div>

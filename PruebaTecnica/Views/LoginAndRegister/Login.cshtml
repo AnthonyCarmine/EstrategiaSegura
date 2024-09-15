@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="~/css/login.css" />
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<partial name="~/Views/Shared/Components/infoDivComponent.cshtml" />
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <img src="~/images/login/LoginImg1.PNG" alt="Family Image" class="img-fluid img-longer">
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Login" method="post" class="needs-validation login-form" novalidate>
+                        <div class="d-grid gap-2 mb-4">
+                            <a href="@Url.Action("Index", "Register")" class="btn btn-light">Ingreso Sistema de Reservas</a>
+                        </div>
+                        <div class="text-center mb-4">
+                            <p>Digite su Clave a través del teclado dinámico que se encuentra en la pantalla</p>
+                        </div>
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-7">
+                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                    <label for="documento" class="form-label">Nro Documento:</label>
+                                    <input type="number" class="form-control" id="documento" name="document" min="0" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, ingrese su número de documento.
+                                    </div>
+                                </div>
+                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                    <label for="clave" class="form-label">Clave:</label>
+                                    <input type="password" class="form-control" id="clave" name="password" min="0" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, ingrese su clave.
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="keyboard-section">
+                                    <div class="keyboard-row">
+                                        <button type="button" class="btn btn-number">8</button>
+                                        <button type="button" class="btn btn-number">0</button>
+                                        <button type="button" class="btn btn-number">7</button>
+                                    </div>
+                                    <div class="keyboard-row">
+                                        <button type="button" class="btn btn-number">2</button>
+                                        <button type="button" class="btn btn-number">4</button>
+                                        <button type="button" class="btn btn-number">3</button>
+                                    </div>
+                                    <div class="keyboard-row">
+                                        <button type="button" class="btn btn-number">5</button>
+                                        <button type="button" class="btn btn-number">9</button>
+                                        <button type="button" class="btn btn-number">1</button>
+                                    </div>
+                                    <div class="keyboard-row">
+                                        <button type="button" class="btn btn-number">6</button>
+                                        <button type="button" class="btn btn-number btn-limpiar">Limpiar</button>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-1">
+                                    <p class="small-text">Contraste</p>
+                                    <div class="keyboard-row keyboard-row-contrast">
+                                        <button type="button" class="btn btn-number"></button>
+                                        <button type="button" class="btn btn-number"></button>
+                                        <button type="button" class="btn btn-number"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                               <a asp-controller="Login" asp-action="Register">
+                                    <img src="~/images/login/LoginImg2.PNG" alt="Register Image" class="img-fluid img-shadow">
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/login.js"></script>
+}

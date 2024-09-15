@@ -1,0 +1,23 @@
+/* wwwroot/css/stylesLayout.css */
+header {
+    background-color: #BF2F37;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    height: 80px;
+}
+
+header img {
+    max-height: 100%;
+    width: auto;
+}
+
+footer {
+    background-color: #BF2F37;
+    color: white;
+    text-align: center;
+    padding: 2px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

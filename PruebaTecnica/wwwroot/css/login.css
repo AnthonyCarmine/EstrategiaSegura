@@ -1,0 +1,145 @@
+body {
+    background-color: #FFFFFF;
+    overflow-x: hidden; /* Evitar el scroll horizontal */
+    margin: 0; /* Eliminar el margen del body */
+    padding: 0; /* Eliminar el padding del body */
+}
+
+.container {
+    max-width: 100%; /* Asegurarse de que el contenedor no exceda el ancho de la pantalla */
+    padding: 0 15px; /* Añadir padding para evitar que el contenido toque los bordes */
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.col-md-6 {
+    padding-right: 10px; /* Reducir el padding derecho */
+    padding-left: 10px; /* Reducir el padding izquierdo */
+}
+
+.img-fluid {
+    margin-right: -10px; /* Reducir el margen derecho para pegar la imagen al contenido de al lado */
+    height: auto; /* Mantener la proporción de la imagen */
+    max-height: 100%; /* Asegurarse de que la imagen no se salga del contenedor */
+    max-width: 100%; /* Asegurarse de que la imagen no se salga del contenedor */
+}
+
+.img-longer {
+    height: 100%; /* Hacer la imagen más larga */
+    max-height: 500px; /* Ajustar el tamaño máximo de la imagen */
+}
+
+.img-shadow {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Añadir más sombra a la imagen */
+    max-width: 90%; /* Hacer la imagen ligeramente más pequeña */
+}
+
+.login-form .form-control {
+    width: 100%; /* Ancho completo para mejor alineación */
+    max-width: 100%;
+    margin: 0;
+    height: auto; /* Ajustar la altura automáticamente */
+    padding: 0.2rem 0.4rem; /* Reducir el padding para disminuir la altura */
+    font-size: 0.9rem; /* Ajustar el tamaño de la fuente */
+    line-height: 1.2; /* Ajustar la altura de la línea */
+}
+
+.login-form .form-label {
+    display: block;
+    width: 100%; /* Ancho completo para mejor alineación */
+    max-width: 100%;
+    margin: 0;
+    font-size: 0.9rem; /* Ajustar el tamaño de la fuente */
+    line-height: 1.2; /* Ajustar la altura de la línea */
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border: none; /* Eliminar el borde de la tarjeta */
+}
+
+.btn-number {
+    background: linear-gradient(to bottom, #C4757C 50%, #B04650 50%); /* Gradiente vertical */
+    color: white;
+    border: none;
+    padding: 0.2rem 0.4rem; /* Aumentar el padding para hacer los botones más anchos */
+    font-size: 0.8rem; /* Reducir el tamaño de la fuente para hacer los botones más pequeños */
+    margin: 0.1rem;
+    border-radius: 10px; /* Hacer los botones menos redondeados */
+    width: 2.5rem; /* Establecer un ancho fijo para hacer los botones más anchos */
+    height: 2rem; /* Establecer una altura fija para hacer los botones más pequeños */
+}
+
+.btn-limpiar {
+    grid-column: span 2; /* Hacer que el botón "Limpiar" ocupe 2 columnas */
+    width: calc(2 * 2.5rem + 2 * 0.1rem); /* Ajustar el ancho para ocupar dos columnas incluyendo márgenes */
+    margin-left: 0.1rem; /* Ajustar el margen izquierdo para alinear con otros botones */
+}
+
+.btn-primary {
+    background: linear-gradient(to bottom, #C4757C 50%, #B04650 50%); /* Gradiente vertical */
+    color: white;
+    border: none;
+    padding: 0.2rem 0.4rem; /* Aumentar el padding para hacer los botones más anchos */
+    font-size: 0.8rem; /* Reducir el tamaño de la fuente para hacer los botones más pequeños */
+    margin: 0.1rem;
+    border-radius: 10px; /* Hacer los botones menos redondeados */
+    width: 5rem; /* Establecer un ancho fijo para hacer los botones más anchos */
+    height: 2rem; /* Establecer una altura fija para hacer los botones más pequeños */
+}
+
+.login-form {
+    border: none; /* Eliminar el borde del formulario */
+}
+
+.keyboard-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar los botones */
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center; /* Centrar los botones */
+    width: 100%;
+    margin-top: 0.2rem; /* Reducir el margen superior para acercar los botones */
+}
+
+.keyboard-row-contrast {
+    margin-top: 0; /* Eliminar el margen superior para los botones de contraste */
+}
+
+.small-text {
+    font-size: 0.8rem; /* Hacer el texto más pequeño */
+    margin-bottom: 0.2rem; /* Reducir el margen inferior para acercar el texto a los botones */
+}
+
+.d-flex.align-items-center {
+    align-items: center;
+    justify-content: space-between; /* Distribuir el espacio entre la etiqueta y el input */
+}
+
+.card-body {
+    padding: 10px; /* Reducir el padding del cuerpo de la tarjeta */
+}
+
+.d-grid.gap-2.mb-4 {
+    margin-bottom: 1rem; /* Reducir el margen inferior */
+}
+
+.text-center.mb-4 {
+    margin-bottom: 1rem; /* Reducir el margen inferior */
+}
+
+.text-center.mt-3 {
+    margin-top: 1rem; /* Reducir el margen superior */
+}
+
+.text-center.mt-1 {
+    margin-top: 0.5rem; /* Reducir el margen superior */
+}

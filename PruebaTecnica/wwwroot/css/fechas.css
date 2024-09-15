@@ -1,0 +1,175 @@
+/* General styles for the page */
+body {
+    background-color: #f8f9fa; /* Set a light grey background color */
+    margin: 0; /* Ensure no margin is applied to the body */
+    padding: 0; /* Ensure no padding is applied to the body */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    margin-top: 0; /* Remove top margin */
+    padding: 0.5cm 1cm; /* Add padding: 0.5cm top/bottom, 1cm left/right */
+    max-width: 100%; /* Ensure container does not exceed screen width */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.title-color {
+    color: #333;
+}
+
+.btn-gradient {
+    background: linear-gradient(45deg, #9F1B26, #B32730);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(45deg, #9F1B26, #B32730);
+}
+
+/* Styles for the images to ensure they have the same size */
+.same-size {
+    width: 100%;
+    height: 100px; /* Set a smaller fixed height */
+    object-fit: cover;
+}
+
+/* Style for the ubicacion image */
+.ubicacion-img {
+    width: 80px; /* Set a slightly smaller width */
+    height: 80px; /* Set a slightly smaller height to make it square */
+    object-fit: cover; /* Ensure the image covers the area */
+    margin-left: 10px; /* Add some space between the icon and the text */
+    border: 2px solid #ccc; /* Add a border */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
+}
+
+/* Styles for the table */
+.table-container {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table .table {
+    background-color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .col-md-3, .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Centering the div with the image and text */
+.mt-3.d-flex.align-items-center.justify-content-center {
+    justify-content: center;
+}
+
+/* Styles for the description */
+.descripcion-container {
+    max-height: 650px; /* Set a larger fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px; /* Optional: Add some padding */
+}
+
+/* Set color #BF353D for h3 elements */
+.red-title {
+    color: #BF353D;
+}
+
+/* Styles for smaller input fields */
+input {
+    height: 30px; /* Set a smaller fixed height */
+    padding: 5px; /* Reduce padding */
+    font-size: 14px; /* Optional: Adjust font size */
+}
+
+/* Set background color for content */
+.content {
+    background-color: #EEEEEE;
+}
+
+/* Ensure no margin or padding for partial elements */
+partial {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles for icons */
+.icon {
+    width: 24px; /* Set the width of the icon */
+    height: 24px; /* Set the height of the icon */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Styles for the modal body */
+.modal-body {
+    background: linear-gradient(to bottom, #EAEAEA, #FFFFFF);
+}
+
+/* Styles for the modal header */
+.modal-header {
+    background: linear-gradient(to bottom, #FFFFFF, #ECECEC, #D4D4D4);
+    padding: 5px 10px; /* Reduce padding to make the section less tall */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.25rem; /* Adjust font size if necessary */
+}
+
+.close {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Adjust font size if necessary */
+    cursor: pointer;
+}
+
+/* Custom margin class */
+.custom-margin {
+    margin: 0.5cm 1cm; /* Add 0.5cm top/bottom and 1cm left/right margin */
+}

@@ -1,0 +1,93 @@
+Reservas.cshtml
+<link rel="stylesheet" href="~/css/reservas.css" />
+
+@{
+    ViewData["Title"] = "Mis Reservas";
+    ViewData["TabsType"] = "Reservas";
+}
+
+<partial name="~/Views/Shared/Components/InfoDivComponent.cshtml" />
+
+<div class="container">
+    <h3 class="title-color red-title">Mis Reservas</h3>
+    <partial name="~/Views/Shared/Components/TabsComponent.cshtml" />
+    <div class="content active">
+        <div class="custom-margin">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="table-container">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Ampliar</th>
+                                    <th>Lugar</th>
+                                    <th>Fecha Reserva</th>
+                                    <th>Fecha Llegada</th>
+                                    <th>Fecha Salida</th>
+                                    <th>No. Personas</th>
+                                    <th>No. Habitaciones</th>
+                                    <th>Valor Total</th>
+                                    <th>Comprobante de Pago</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="~/images/fechas/lupa.png" alt="Ampliar" class="icon" data-toggle="modal" data-target="#detailsModal">
+                                    </td>
+                                    <td>Villeta</td>
+                                    <td>01/01/2023</td>
+                                    <td>05/01/2023</td>
+                                    <td>10/01/2023</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>$500,000</td>
+                                    <td>
+                                        <a href="~/comprobantes/comprobante1.pdf" target="_blank">Ver Comprobante</a>
+                                    </td>
+                                </tr>
+                                <!-- Agrega más filas según sea necesario -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title red-title" id="detailsModalLabel">Detalle Reserva</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><i class="fas fa-check"></i> Detalles de la reserva...</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><i class="fas fa-check"></i> Lugar: Villeta</p>
+                        <p><i class="fas fa-check"></i> Fecha Reserva: 01/01/2023</p>
+                        <p><i class="fas fa-check"></i> Fecha Llegada: 05/01/2023</p>
+                        <p><i class="fas fa-check"></i> Fecha Salida: 10/01/2023</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><i class="fas fa-check"></i> No. Personas: 4</p>
+                        <p><i class="fas fa-check"></i> No. Habitaciones: 2</p>
+                        <p><i class="fas fa-check"></i> Valor Total: $500,000</p>
+                        <p><i class="fas fa-check"></i> Comprobante de Pago: <a href="~/comprobantes/comprobante1.pdf" target="_blank">Ver Comprobante</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
