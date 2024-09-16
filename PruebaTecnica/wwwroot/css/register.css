@@ -22,45 +22,45 @@
     align-items: center;
 }
 .form-control {
-    width: 95%; /* Ajusta el ancho de los inputs */
-    height: 2rem; /* Ajusta la altura de los inputs */
-    margin-bottom: 10px; /* Espacio entre los inputs */
-    font-size: 1rem; /* Ajusta el tamaño de la fuente */
-    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y la altura */
+    width: 95%; 
+    height: 2rem; 
+    margin-bottom: 10px; 
+    font-size: 1rem; 
+    box-sizing: border-box; 
 }
 .required-asterisk {
     color: red;
-    font-size: 1.5rem; /* Ajusta el tamaño del asterisco para que coincida con la altura del input */
+    font-size: 1.5rem; 
     margin-left: 5px;
 }
 .input-container {
     display: flex;
     align-items: center;
-    width: 95%; /* Ajusta el ancho del contenedor de los inputs */
+    width: 95%; 
 }
 .d-flex {
     display: flex;
     justify-content: space-between;
-    margin: 0.5cm 1cm; /* Márgenes de 1 cm a los lados y 0.5 cm en la parte superior e inferior */
+    margin: 0.5cm 1cm; 
 }
 .flex-column {
     flex: 1;
-    margin-right: 10px; /* Espacio entre las columnas */
+    margin-right: 10px; 
 }
 .radio-group {
     display: flex;
-    justify-content: space-between; /* Espacio entre los botones de radio */
+    justify-content: space-between; 
     align-items: center;
-    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+    width: 100%; 
 }
 .radio-group div {
     flex: 1;
-    text-align: center; /* Centra el contenido dentro de cada div */
+    text-align: center; 
 }
 .radio-group p {
     flex: 2;
-    text-align: center; /* Centra el texto del párrafo */
-    margin: 0; /* Elimina el margen del párrafo */
+    text-align: center; 
+    margin: 0; 
 }
 .botonConfirmar {
     display: flex;
@@ -74,22 +74,22 @@
     font-size: 1rem;
     border: none;
     border-radius: 5px;
-    background-color: white; /* Color de fondo blanco */
-    color: black; /* Color del texto */
-    height: 2rem; /* Ajusta la altura de los botones para que coincida con los inputs */
-    width: auto; /* Ajusta el ancho de los botones */
-    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho y la altura */
-    text-align: center; /* Centra el texto dentro del botón */
+    background-color: white; 
+    color: black; 
+    height: 2rem; 
+    width: auto; 
+    box-sizing: border-box; 
+    text-align: center; 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .custom-button i {
-    margin-right: 5px; /* Espacio entre el icono y el texto */
+    margin-right: 5px; 
 }
 .custom-button:disabled {
-    background-color: lightgray; /* Color de fondo gris para el botón deshabilitado */
-    color: darkgray; /* Color del texto para el botón deshabilitado */
+    background-color: lightgray; 
+    color: darkgray; 
 }
 .message {
     color: gray;

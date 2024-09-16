@@ -1,0 +1,584 @@
+@model IEnumerable<PruebaTecnica.Models.Habitacion>
+
+<link rel="stylesheet" href="~/css/fechas.css" />
+
+@{
+    ViewData["Title"] = "Disponibilidad de Habitaciones";
+    int sedeId = ViewBag.SedeId;
+}
+<partial name="~/Views/Shared/Components/InfoDivComponent.cshtml" />
+
+<div class="container">
+    <h3 class="title-color red-title">Sedes Recreativas y Apartamentos</h3>
+    <partial name="~/Views/Shared/Components/TabsComponent.cshtml" />
+    <div class="content active">
+        <div class="custom-margin">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="title-color red-title">Mis Fechas</h3>
+                    <form id="formBuscarDisponibilidad">
+                        <div class="form-group">
+                            <label for="fechaLlegada">Fecha de Llegada</label>
+                            <input type="date" id="fechaLlegada" class="form-control" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaSalida">Fecha de Salida</label>
+                            <input type="date" id="fechaSalida" class="form-control" required />
+                        </div>
+                        <div>
+                            <label for="noches">Noches:</label>
+                            <input type="number" id="noches" class="form-control small-input" style="width: 50px;" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="personas">Número de Personas</label>
+                            <input type="number" id="personas" class="form-control small-input" style="width: 50px;" required />
+                        </div>
+                        <button type="button" id="buscarDisponibilidad" class="btn btn-gradient mt-2">Buscar</button>
+                    </form>
+                    <div>
+                        <label for="lavanderia">Servicio de Lavandería:</label>
+                        <input type="checkbox" id="lavanderia">
+                    </div>
+                    <hr>
+                    <h3 class="title-color red-title">Total Reserva</h3>
+                    <div>
+                        <label for="habitaciones">Habitaciones:</label>
+                        <input type="number" id="habitaciones" class="form-control small-input" style="width: 50px;" readonly>
+                    </div>
+                    <div>
+                        <label for="diasOrdinarios">Días Ordinarios:</label>
+                        <div class="d-flex">
+                            <input type="number" id="diasOrdinarios" class="form-control small-input" style="width: 50px;" readonly>
+                            <input type="text" id="tarifaOrdinaria" class="form-control small-input" style="width: 100px; margin-left: 10px;" readonly>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="diasEspeciales">Días Especiales:</label>
+                        <div class="d-flex">
+                            <input type="number" id="diasEspeciales" class="form-control small-input" style="width: 50px;" readonly>
+                            <input type="text" id="tarifaEspecial" class="form-control small-input" style="width: 100px; margin-left: 10px;" readonly>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="lavanderiaCosto">Lavandería:</label>
+                        <input type="text" id="lavanderiaCosto" class="form-control small-input" style="width: 100px;" readonly>
+                    </div>
+                    <h3 class="title-color red-title">Valor Total</h3>
+                    <div>
+                        <span id="valorTotal">1000</span>
+                    </div>
+                    <button class="btn btn-gradient" id="Reservar">Reservar</button>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="title-color red-title">Sede Recreativa Villeta</h3>
+                    <img src="~/images/edificio-sede.webp" alt="Sede Recreativa Villeta" class="img-fluid">
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <img src="~/images/fechas/imagen1Finca.jfif" alt="Imagen 1" class="img-fluid same-size">
+                        </div>
+                        <div class="col-3">
+                            <img src="~/images/fechas/imagen2Finca.jpg" alt="Imagen 2" class="img-fluid same-size">
+                        </div>
+                        <div class="col-3">
+                            <img src="~/images/fechas/imagen3Finca.jfif" alt="Imagen 3" class="img-fluid same-size">
+                        </div>
+                        <div class="col-3">
+                            <img src="~/images/fechas/imagen4Finca.jpg" alt="Imagen 4" class="img-fluid same-size">
+                        </div>
+                    </div>
+                    <div class="mt-3 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <img src="~/images/fechas/ubicacion.PNG" alt="ubicacion" class="ubicacion-img">
+                        <span class="text-danger ms-2">Descargar ruta de llegada</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mt-3 descripcion-container">
+                        <p>Descripción de la sede recreativa Villeta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="title-color red-title">Habitaciones/Alojamientos</h3>
+                    <div class="table-container">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Detalles</th>
+                                    <th>Nombre</th>
+                                    <th>Capacidad Máxima</th>
+                                    <th>Tarifa Día Ordinario</th>
+                                    <th>Tarifa Día Especial</th>
+                                    <th>Disponibilidad Fecha Seleccionada</th>
+                                    <th>Ver Calendario Disponibilidad</th>
+                                    <th>Reservar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="habitacionesDisponibles">
+                                @foreach (var habitacion in Model)
+                                {
+                                    <tr>
+                                        <td><img src="~/images/fechas/lupa.png" alt="Detalles" class="open-modal" data-id="@habitacion.HabitacionID" style="width: 20px; height: 20px; cursor: pointer;"></td>
+                                        <td>@habitacion.NombreHabitacion</td>
+                                        <td>@habitacion.CapacidadMaxima</td>
+                                        <td>@habitacion.TarifaDiaOrdinario</td>
+                                        <td>@habitacion.TarifaDiaEspecial</td>
+                                        <td id="disponibilidad-@habitacion.HabitacionID"></td> <!-- Disponibilidad Fecha Seleccionada -->
+                                        <td></td> <!-- Ver Calendario Disponibilidad -->
+                                        <td id="reservar-@habitacion.HabitacionID"><input type="checkbox" name="reservar" value="@habitacion.HabitacionID" data-tarifa-ordinaria="@habitacion.TarifaDiaOrdinario" data-tarifa-especial="@habitacion.TarifaDiaEspecial" /></td>
+                                    </tr>
+                                }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+ <div class="modal fade" id="habitacionModal" tabindex="-1" role="dialog" aria-labelledby="habitacionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="habitacionModalLabel">Detalles de la Habitación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Aquí se cargará la vista parcial _HabitacionDetails.cshtml -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Confirmación de Reserva -->
+<div class="modal fade" id="R" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title red-title" id="detailsModalLabel">Confirmación Reserva</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="title-color red-title">Mis Fechas</h3>
+                        <div>
+                            <label for="modalFechaLlegada">Fecha de Llegada:</label>
+                            <input type="date" id="modalFechaLlegada" class="form-control small-input">
+                        </div>
+                        <div>
+                            <label for="modalFechaSalida">Fecha de Salida:</label>
+                            <input type="date" id="modalFechaSalida" class="form-control small-input">
+                        </div>
+                        <div>
+                            <label for="modalNoches">Noches:</label>
+                            <input type="number" id="modalNoches" class="form-control small-input" style="width: 50px;">
+                        </div>
+                        <div>
+                            <label for="modalPersonas">Personas:</label>
+                            <input type="number" id="modalPersonas" class="form-control small-input" style="width: 50px;">
+                        </div>
+                        <div>
+                            <label for="modalLavanderia">Servicio de Lavandería:</label>
+                            <input type="checkbox" id="modalLavanderia">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="title-color red-title">Total Reserva</h3>
+                        <div>
+                            <label for="modalHabitaciones">Habitaciones:</label>
+                            <input type="number" id="modalHabitaciones" class="form-control small-input" style="width: 50px;">
+                        </div>
+                        <div>
+                            <label for="modalDiasOrdinarios">Días Ordinarios:</label>
+                            <div class="d-flex">
+                                <input type="number" id="modalDiasOrdinarios" class="form-control small-input" style="width: 50px;">
+                                <input type="text" id="modalTarifaOrdinaria" class="form-control small-input" style="width: 100px; margin-left: 10px;">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="modalDiasEspeciales">Días Especiales:</label>
+                            <div class="d-flex">
+                                <input type="number" id="modalDiasEspeciales" class="form-control small-input" style="width: 50px;">
+                                <input type="text" id="modalTarifaEspecial" class="form-control small-input" style="width: 100px; margin-left: 10px;">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="modalLavanderiaCosto">Lavandería:</label>
+                            <input type="text" id="modalLavanderiaCosto" class="form-control small-input" style="width: 100px;">
+                        </div>
+                        <div class="d-flex gap-1">
+                            <p>Valor Total:</p>
+                            <span id="modalValorTotal">1000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-gradient" id="confirmarReserva">Reservar</button>
+                    <button class="btn btn-gradient" data-dismiss="modal" style="margin-left: 10px;">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+     $(document).on('click', '.open-modal', function () {
+    var habitacionId = $(this).data('id'); // Obtener el ID de la habitación desde el botón
+
+    $.ajax({
+        url: '/Reserva/GetHabitacionById', // Ruta hacia el método GetHabitacionById en el controlador
+        type: 'GET',
+        data: { habitacionId: habitacionId },
+        success: function (result) {
+            // Cargar el contenido de la vista parcial en el cuerpo del modal
+            $('#modal-body').html(result);
+            $('#habitacionModal').modal('show'); // Mostrar el modal
+        },
+        error: function () {
+            alert('Error al cargar los detalles de la habitación.');
+        }
+    });
+});
+
+// Script para cerrar el modal
+$(document).on('click', '.close', function () {
+    $('#habitacionModal').modal('hide');
+});
+
+// Cerrar el modal al hacer clic fuera de él
+$(window).on('click', function (event) {
+    if ($(event.target).hasClass('modal')) {
+        $('#habitacionModal').modal('hide');
+    }
+});
+
+// Script para buscar disponibilidad
+$('#buscarDisponibilidad').on('click', function () {
+    var fechaLlegada = $('#fechaLlegada').val();
+    var fechaSalida = $('#fechaSalida').val();
+    var personas = $('#personas').val();
+    var sedeId = '@sedeId';
+
+    $.ajax({
+        url: '/Reserva/GetDisponibilidadHabitacionPorSede',
+        type: 'GET',
+        data: {
+            sedeId: sedeId,
+            fechaInicio: fechaLlegada,
+            fechaFin: fechaSalida,
+            numeroPersonas: personas
+        },
+        success: function (result) {
+            $.each(result, function (index, habitacion) {
+                $('#disponibilidad-' + habitacion.habitacionID).text(habitacion.disponible);
+                if (habitacion.disponible === "No") {
+                    $('#reservar-' + habitacion.habitacionID).empty();
+                }
+            });
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr.responseText); // Agregar para depuración
+            alert('Error al buscar disponibilidad de habitaciones.');
+        }
+    });
+});
+
+// Script para mostrar el modal de confirmación de reserva
+$('#Reservar').on('click', function () {
+    var habitacionesSeleccionadas = $('input[name="reservar"]:checked');
+    if (habitacionesSeleccionadas.length > 0) {
+        $('#R').modal('show');
+    } else {
+        alert('Por favor seleccione al menos una habitación disponible para reservar.');
+    }
+});
+
+$(document).ready(function () {
+    const fechasEspeciales = [
+        '2024-09-20', // Ejemplo de fecha especial
+        '2024-09-21'  // Ejemplo de fecha especial
+    ];
+
+    function calcularDiferenciaFechas(fecha1, fecha2) {
+        var diferencia = new Date(fecha2) - new Date(fecha1);
+        return Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+    }
+
+    function esFechaEspecial(fecha) {
+        return fechasEspeciales.includes(fecha.toISOString().split('T')[0]);
+    }
+
+    function calcularCostoTotal() {
+        var fechaLlegada = new Date($('#fechaLlegada').val());
+        var fechaSalida = new Date($('#fechaSalida').val());
+        var personas = parseInt($('#personas').val());
+        var noches = calcularDiferenciaFechas(fechaLlegada, fechaSalida);
+
+        $('#noches').val(noches);
+
+        var diasOrdinarios = 0;
+        var diasEspeciales = 0;
+        var fechaActual = new Date(fechaLlegada);
+
+        for (var i = 0; i < noches; i++) {
+            if (esFechaEspecial(fechaActual)) {
+                diasEspeciales++;
+            } else {
+                diasOrdinarios++;
+            }
+            fechaActual.setDate(fechaActual.getDate() + 1);
+        }
+
+        $('#diasOrdinarios').val(diasOrdinarios);
+        $('#diasEspeciales').val(diasEspeciales);
+
+        var habitacionesSeleccionadas = $('input[name="reservar"]:checked').map(function () {
+            return {
+                id: $(this).val(),
+                tarifaOrdinaria: parseFloat($(this).data('tarifa-ordinaria')),
+                tarifaEspecial: parseFloat($(this).data('tarifa-especial'))
+            };
+        }).get();
+
+        if (habitacionesSeleccionadas.length === 0) {
+            $('#valorTotal').text('0');
+            return;
+        }
+
+        $('#habitaciones').val(habitacionesSeleccionadas.length);
+
+        let tarifaOrdinariaTotal = 0;
+        let tarifaEspecialTotal = 0;
+
+        habitacionesSeleccionadas.forEach(habitacion => {
+            tarifaOrdinariaTotal += diasOrdinarios * habitacion.tarifaOrdinaria;
+            tarifaEspecialTotal += diasEspeciales * habitacion.tarifaEspecial;
+        });
+
+        $('#tarifaOrdinaria').val(tarifaOrdinariaTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }));
+        $('#tarifaEspecial').val(tarifaEspecialTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }));
+
+        let valorTotal = tarifaOrdinariaTotal + tarifaEspecialTotal;
+
+        const lavanderiaChecked = $('#lavanderia').is(':checked');
+        if (lavanderiaChecked) {
+            const lavanderiaCosto = noches * 18000; // 18,000 por día
+            $('#lavanderiaCosto').val(lavanderiaCosto.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }));
+            valorTotal += lavanderiaCosto;
+        } else {
+            $('#lavanderiaCosto').val('0');
+        }
+
+        $('#valorTotal').text(valorTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }));
+    }
+
+    function calcularCostoTotalModal() {
+        var fechaLlegada = new Date($('#modalFechaLlegada').val());
+        var fechaSalida = new Date($('#modalFechaSalida').val());
+        var personas = parseInt($('#modalPersonas').val());
+        var noches = calcularDiferenciaFechas(fechaLlegada, fechaSalida);
+
+        $('#modalNoches').val(noches);
+
+        var diasOrdinarios = 0;
+        var diasEspeciales = 0;
+        var fechaActual = new Date(fechaLlegada);
+
+        for (var i = 0; i < noches; i++) {
+            if (esFechaEspecial(fechaActual)) {
+                diasEspeciales++;
+            } else {
+                diasOrdinarios++;
+            }
+            fechaActual.setDate(fechaActual.getDate() + 1);
+        }
+
+        $('#modalDiasOrdinarios').val(diasOrdinarios);
+        $('#modalDiasEspeciales').val(diasEspeciales);
+
+        var habitacionesSeleccionadas = $('input[name="reservar"]:checked').map(function () {
+            return {
+                id: $(this).val(),
+                tarifaOrdinaria: parseFloat($(this).data('tarifa-ordinaria')),
+                tarifaEspecial: parseFloat($(this).data('tarifa-especial'))
+            };
+        }).get();
+
+        if (habitacionesSeleccionadas.length === 0) {
+            $('#modalValorTotal').text('0');
+            return;
+        }
+
+        $('#modalHabitaciones').val(habitacionesSeleccionadas.length);
+
+        let tarifaOrdinariaTotal = 0;
+        let tarifaEspecialTotal = 0;
+
+        habitacionesSeleccionadas.forEach(habitacion => {
+            tarifaOrdinariaTotal += diasOrdinarios * habitacion.tarifaOrdinaria;
+            tarifaEspecialTotal += diasEspeciales * habitacion.tarifaEspecial;
+        });
+
+        $('#modalTarifaOrdinaria').val(tarifaOrdinariaTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }));
+        $('#modalTarifaEspecial').val(tarifaEspecialTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }));
+
+        let valorTotal = tarifaOrdinariaTotal + tarifaEspecialTotal;
+
+        const lavanderiaChecked = $('#modalLavanderia').is(':checked');
+        if (lavanderiaChecked) {
+            const lavanderiaCosto = noches * 18000; // 18,000 por día
+            $('#modalLavanderiaCosto').val(lavanderiaCosto.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }));
+            valorTotal += lavanderiaCosto;
+        } else {
+            $('#modalLavanderiaCosto').val('0');
+        }
+
+        $('#modalValorTotal').text(valorTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }));
+    }
+
+    function copiarDatosAlModal() {
+        $('#modalFechaLlegada').val($('#fechaLlegada').val());
+        $('#modalFechaSalida').val($('#fechaSalida').val());
+        $('#modalNoches').val($('#noches').val());
+        $('#modalPersonas').val($('#personas').val());
+        $('#modalLavanderia').prop('checked', $('#lavanderia').is(':checked'));
+        $('#modalHabitaciones').val($('#habitaciones').val());
+        $('#modalDiasOrdinarios').val($('#diasOrdinarios').val());
+        $('#modalDiasEspeciales').val($('#diasEspeciales').val());
+        $('#modalTarifaOrdinaria').val($('#tarifaOrdinaria').val());
+        $('#modalTarifaEspecial').val($('#tarifaEspecial').val());
+        $('#modalLavanderiaCosto').val($('#lavanderiaCosto').val());
+        $('#modalValorTotal').text($('#valorTotal').text());
+    }
+
+    $('#buscarDisponibilidad').click(function () {
+        var fechaLlegada = $('#fechaLlegada').val();
+        var fechaSalida = $('#fechaSalida').val();
+        var personas = $('#personas').val();
+        var sedeId = '@sedeId';
+
+        $.ajax({
+            url: '/Reserva/GetDisponibilidadHabitacionPorSede',
+            type: 'GET',
+            data: {
+                sedeId: sedeId,
+                fechaInicio: fechaLlegada,
+                fechaFin: fechaSalida,
+                numeroPersonas: personas
+            },
+            success: function (result) {
+                $.each(result, function (index, habitacion) {
+                    $('#disponibilidad-' + habitacion.habitacionID).text(habitacion.disponible);
+                    if (habitacion.disponible === "No") {
+                        $('#reservar-' + habitacion.habitacionID).empty();
+                    }
+                });
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr.responseText); // Agregar para depuración
+                alert('Error al buscar disponibilidad de habitaciones.');
+            }
+        });
+    });
+
+    $('input[name="reservar"]').change(function () {
+        calcularCostoTotal();
+        calcularCostoTotalModal();
+    });
+
+    $('#lavanderia').change(function() {
+        calcularCostoTotal();
+    });
+
+    $('#modalLavanderia').change(function() {
+        calcularCostoTotalModal();
+    });
+
+    $(document).on('click', '.open-modal', function () {
+        var habitacionId = $(this).data('id'); // Obtener el ID de la habitación desde el botón
+
+        $.ajax({
+            url: '/Reserva/GetHabitacionById', // Ruta hacia el método GetHabitacionById en el controlador
+            type: 'GET',
+            data: { habitacionId: habitacionId },
+            success: function (result) {
+                // Cargar el contenido de la vista parcial en el cuerpo del modal
+                $('#modal-body').html(result);
+                $('#habitacionModal').modal('show'); // Mostrar el modal
+            },
+            error: function () {
+                alert('Error al cargar los detalles de la habitación.');
+            }
+        });
+    });
+
+    // Script para cerrar el modal
+    $(document).on('click', '.close', function () {
+        $(this).closest('.modal').modal('hide');
+    });
+
+    // Cerrar el modal al hacer clic fuera de él
+    $(window).on('click', function (event) {
+        if ($(event.target).hasClass('modal')) {
+            $(event.target).modal('hide');
+        }
+    });
+
+    // Script para mostrar el modal de confirmación de reserva
+    $('#Reservar').on('click', function () {
+        var habitacionesSeleccionadas = $('input[name="reservar"]:checked');
+        if (habitacionesSeleccionadas.length > 0) {
+            copiarDatosAlModal();
+            $('#R').modal('show');
+        } else {
+            alert('Por favor seleccione al menos una habitación disponible para reservar.');
+        }
+    });
+
+    // Script para confirmar la reserva y agregarla a la tabla de reservas
+    $('#confirmarReserva').on('click', function () {
+        var reserva = {
+            lugar: 'Sede Recreativa Villeta', // Puedes ajustar esto según tu lógica
+            fechaReserva: new Date().toLocaleDateString(),
+            fechaLlegada: $('#modalFechaLlegada').val(),
+            fechaSalida: $('#modalFechaSalida').val(),
+            personas: $('#modalPersonas').val(),
+            habitaciones: $('#modalHabitaciones').val(),
+            valorTotal: $('#modalValorTotal').text()
+        };
+
+        // Aquí puedes agregar la lógica para guardar la reserva en tu backend si es necesario
+
+        // Agregar la reserva a la tabla de reservas
+        var nuevaFila = `
+            <tr>
+                <td><img src="~/images/fechas/lupa.png" alt="Detalles" class="open-modal" style="width: 20px; height: 20px; cursor: pointer;"></td>
+                <td>${reserva.lugar}</td>
+                <td>${reserva.fechaReserva}</td>
+                <td>${reserva.fechaLlegada}</td>
+                <td>${reserva.fechaSalida}</td>
+                <td>${reserva.personas}</td>
+                <td>${reserva.habitaciones}</td>
+                <td>${reserva.valorTotal}</td>
+                <td><button class="btn btn-gradient">Enviar</button></td>
+            </tr>
+        `;
+        $('#tablaReservas tbody').append(nuevaFila);
+
+        // Cerrar el modal
+        $('#R').modal('hide');
+    });
+});
+    </script>
+}

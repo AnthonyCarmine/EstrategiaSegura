@@ -1,16 +1,19 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using PruebaTecnica.Interfaces;
 using PruebaTecnica.Models;
+using System.Threading.Tasks;
 
-namespace PruebaTecnica.Controllers.LoginAndRegister
+namespace PruebaTecnica.Controllers
 {
     public class LoginController : Controller
     {
         private readonly ILogger<LoginController> _logger;
+        private readonly ILoginRepository _loginRepository;
 
-        public LoginController(ILogger<LoginController> logger)
+        public LoginController(ILoginRepository loginRepository)
         {
-            _logger = logger;
+            _loginRepository = loginRepository;
         }
 
         public IActionResult Login()
@@ -18,17 +21,19 @@ namespace PruebaTecnica.Controllers.LoginAndRegister
             return View("~/Views/LoginAndRegister/Login.cshtml");
         }
 
-        public IActionResult Register()
+        [HttpPost]
+        public async Task<IActionResult> Login(string document, int password)
         {
-            return View("~/Views/LoginAndRegister/Register.cshtml");
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (ModelState.IsValid)
+            {
+                var user = await _loginRepository.LoginUserAsync(document, password);
+                if (user != null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError(string.Empty, "Documento o clave incorrectos.");
+            }
+            return View("~/Views/LoginAndRegister/Login.cshtml");
         }
     }
 }
-
-

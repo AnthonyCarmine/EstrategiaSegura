@@ -1,3 +1,5 @@
+@model PruebaTecnica.Models.Usuario
+
 <link rel="stylesheet" href="~/css/login.css" />
 
 @{
@@ -16,7 +18,7 @@
                 <div class="card-body">
                     <form asp-action="Login" method="post" class="needs-validation login-form" novalidate>
                         <div class="d-grid gap-2 mb-4">
-                            <a href="@Url.Action("Index", "Register")" class="btn btn-light">Ingreso Sistema de Reservas</a>
+                            <a href="@Url.Action("Register", "Register")" class="btn btn-light">Ingreso Sistema de Reservas</a>
                         </div>
                         <div class="text-center mb-4">
                             <p>Digite su Clave a través del teclado dinámico que se encuentra en la pantalla</p>
@@ -25,14 +27,14 @@
                             <div class="col-7">
                                 <div class="mb-3 d-flex align-items-center justify-content-between">
                                     <label for="documento" class="form-label">Nro Documento:</label>
-                                    <input type="number" class="form-control" id="documento" name="document" min="0" required>
+                                    <input asp-for="NroDocumento" class="form-control" id="documento" name="document" min="0" required>
                                     <div class="invalid-feedback">
                                         Por favor, ingrese su número de documento.
                                     </div>
                                 </div>
                                 <div class="mb-3 d-flex align-items-center justify-content-between">
                                     <label for="clave" class="form-label">Clave:</label>
-                                    <input type="password" class="form-control" id="clave" name="password" min="0" required>
+                                    <input asp-for="Clave" class="form-control" id="clave" name="password" min="0" required>
                                     <div class="invalid-feedback">
                                         Por favor, ingrese su clave.
                                     </div>

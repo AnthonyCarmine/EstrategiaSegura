@@ -1,13 +1,13 @@
 body {
     background-color: #FFFFFF;
-    overflow-x: hidden; /* Evitar el scroll horizontal */
-    margin: 0; /* Eliminar el margen del body */
-    padding: 0; /* Eliminar el padding del body */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    max-width: 100%; /* Asegurarse de que el contenedor no exceda el ancho de la pantalla */
-    padding: 0 15px; /* Añadir padding para evitar que el contenido toque los bordes */
+    max-width: 100%;
+    padding: 0 15px;
 }
 
 .row {
@@ -16,130 +16,130 @@ body {
 }
 
 .col-md-6 {
-    padding-right: 10px; /* Reducir el padding derecho */
-    padding-left: 10px; /* Reducir el padding izquierdo */
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .img-fluid {
-    margin-right: -10px; /* Reducir el margen derecho para pegar la imagen al contenido de al lado */
-    height: auto; /* Mantener la proporción de la imagen */
-    max-height: 100%; /* Asegurarse de que la imagen no se salga del contenedor */
-    max-width: 100%; /* Asegurarse de que la imagen no se salga del contenedor */
+    margin-right: -10px;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .img-longer {
-    height: 100%; /* Hacer la imagen más larga */
-    max-height: 500px; /* Ajustar el tamaño máximo de la imagen */
+    height: 100%;
+    max-height: 500px;
 }
 
 .img-shadow {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Añadir más sombra a la imagen */
-    max-width: 90%; /* Hacer la imagen ligeramente más pequeña */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    max-width: 90%;
 }
 
 .login-form .form-control {
-    width: 100%; /* Ancho completo para mejor alineación */
+    width: 100%;
     max-width: 100%;
     margin: 0;
-    height: auto; /* Ajustar la altura automáticamente */
-    padding: 0.2rem 0.4rem; /* Reducir el padding para disminuir la altura */
-    font-size: 0.9rem; /* Ajustar el tamaño de la fuente */
-    line-height: 1.2; /* Ajustar la altura de la línea */
+    height: auto;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
 }
 
 .login-form .form-label {
     display: block;
-    width: 100%; /* Ancho completo para mejor alineación */
+    width: 100%;
     max-width: 100%;
     margin: 0;
-    font-size: 0.9rem; /* Ajustar el tamaño de la fuente */
-    line-height: 1.2; /* Ajustar la altura de la línea */
+    font-size: 0.9rem;
+    line-height: 1.2;
 }
 
 .card {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    border: none; /* Eliminar el borde de la tarjeta */
+    border: none;
 }
 
 .btn-number {
-    background: linear-gradient(to bottom, #C4757C 50%, #B04650 50%); /* Gradiente vertical */
+    background: linear-gradient(to bottom, #C4757C 50%, #B04650 50%);
     color: white;
     border: none;
-    padding: 0.2rem 0.4rem; /* Aumentar el padding para hacer los botones más anchos */
-    font-size: 0.8rem; /* Reducir el tamaño de la fuente para hacer los botones más pequeños */
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
     margin: 0.1rem;
-    border-radius: 10px; /* Hacer los botones menos redondeados */
-    width: 2.5rem; /* Establecer un ancho fijo para hacer los botones más anchos */
-    height: 2rem; /* Establecer una altura fija para hacer los botones más pequeños */
+    border-radius: 10px;
+    width: 2.5rem;
+    height: 2rem;
 }
 
 .btn-limpiar {
-    grid-column: span 2; /* Hacer que el botón "Limpiar" ocupe 2 columnas */
-    width: calc(2 * 2.5rem + 2 * 0.1rem); /* Ajustar el ancho para ocupar dos columnas incluyendo márgenes */
-    margin-left: 0.1rem; /* Ajustar el margen izquierdo para alinear con otros botones */
+    grid-column: span 2;
+    width: calc(2 * 2.5rem + 2 * 0.1rem);
+    margin-left: 0.1rem;
 }
 
 .btn-primary {
-    background: linear-gradient(to bottom, #C4757C 50%, #B04650 50%); /* Gradiente vertical */
+    background: linear-gradient(to bottom, #C4757C 50%, #B04650 50%);
     color: white;
     border: none;
-    padding: 0.2rem 0.4rem; /* Aumentar el padding para hacer los botones más anchos */
-    font-size: 0.8rem; /* Reducir el tamaño de la fuente para hacer los botones más pequeños */
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
     margin: 0.1rem;
-    border-radius: 10px; /* Hacer los botones menos redondeados */
-    width: 5rem; /* Establecer un ancho fijo para hacer los botones más anchos */
-    height: 2rem; /* Establecer una altura fija para hacer los botones más pequeños */
+    border-radius: 10px;
+    width: 5rem;
+    height: 2rem;
 }
 
 .login-form {
-    border: none; /* Eliminar el borde del formulario */
+    border: none;
 }
 
 .keyboard-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centrar los botones */
+    justify-content: center;
 }
 
 .keyboard-row {
     display: flex;
-    justify-content: center; /* Centrar los botones */
+    justify-content: center;
     width: 100%;
-    margin-top: 0.2rem; /* Reducir el margen superior para acercar los botones */
+    margin-top: 0.2rem;
 }
 
 .keyboard-row-contrast {
-    margin-top: 0; /* Eliminar el margen superior para los botones de contraste */
+    margin-top: 0;
 }
 
 .small-text {
-    font-size: 0.8rem; /* Hacer el texto más pequeño */
-    margin-bottom: 0.2rem; /* Reducir el margen inferior para acercar el texto a los botones */
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
 }
 
 .d-flex.align-items-center {
     align-items: center;
-    justify-content: space-between; /* Distribuir el espacio entre la etiqueta y el input */
+    justify-content: space-between;
 }
 
 .card-body {
-    padding: 10px; /* Reducir el padding del cuerpo de la tarjeta */
+    padding: 10px;
 }
 
 .d-grid.gap-2.mb-4 {
-    margin-bottom: 1rem; /* Reducir el margen inferior */
+    margin-bottom: 1rem;
 }
 
 .text-center.mb-4 {
-    margin-bottom: 1rem; /* Reducir el margen inferior */
+    margin-bottom: 1rem;
 }
 
 .text-center.mt-3 {
-    margin-top: 1rem; /* Reducir el margen superior */
+    margin-top: 1rem;
 }
 
 .text-center.mt-1 {
-    margin-top: 0.5rem; /* Reducir el margen superior */
+    margin-top: 0.5rem;
 }

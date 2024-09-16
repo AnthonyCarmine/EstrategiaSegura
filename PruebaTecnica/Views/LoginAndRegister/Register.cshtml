@@ -1,4 +1,5 @@
-Register.cshtml
+@model PruebaTecnica.Models.Usuario
+
 <link rel="stylesheet" href="~/css/register.css" />
 <link rel="stylesheet" href="~/css/infoDiv.css" />
 
@@ -13,125 +14,125 @@ Register.cshtml
     <h3 class="title-color">Registro Nuevo Usuario</h3>
     <partial name="~/Views/Shared/Components/TabsComponent.cshtml" />
     <div class="content">
-        <div class="d-flex">
-            <div class="flex-column">
-                <label class="form-label">Nro Documento:</label>
-                <div class="input-container">
-                    <input class="form-control" type="number" required>
-                    <span class="required-asterisk">*</span>
+        <form asp-action="Register" method="post">
+            <div class="d-flex">
+                <div class="flex-column">
+                    <label class="form-label">Nro Documento:</label>
+                    <div class="input-container">
+                        <input asp-for="NroDocumento" class="form-control" type="number" required>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Nombre Completo:</label>
+                    <div class="input-container">
+                        <input asp-for="NombreCompleto" class="form-control" type="text" required>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Fecha de Nacimiento:</label>
+                    <div class="input-container">
+                        <input asp-for="FechaNacimiento" class="form-control" type="date" required>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Celular:</label>
+                    <div class="input-container">
+                        <input asp-for="Celular" class="form-control" type="text">
+                    </div>
+                    <label class="form-label">Direccion Email:</label>
+                    <div class="input-container">
+                        <input asp-for="Email" class="form-control" type="email" required>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Departamento:</label>
+                    <div class="input-container">
+                        <select asp-for="Departamento" class="form-control" required>
+                            <option value="" disabled selected hidden>Seleccione un departamento</option>
+                            <option value="Antioquia">Antioquia</option>
+                            <option value="Cundinamarca">Cundinamarca</option>
+                            <option value="Valle del Cauca">Valle del Cauca</option>
+                            <option value="Santander">Santander</option>
+                            <option value="Bolívar">Bolívar</option>
+                            <!-- Agrega más departamentos aquí -->
+                        </select>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Municipio:</label>
+                    <div class="input-container">
+                        <select asp-for="Municipio" class="form-control" required>
+                            <option value="" disabled selected hidden>Seleccione un municipio</option>
+                        </select>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Barrio:</label>
+                    <div class="input-container">
+                        <input asp-for="Barrio" class="form-control" type="text" required>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Direccion Residencia:</label>
+                    <div class="input-container">
+                        <input asp-for="DireccionResidencia" class="form-control" type="text" required>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Telefono Residencia:</label>
+                    <div class="input-container">
+                        <input asp-for="TelefonoResidencia" class="form-control" type="text">
+                    </div>
                 </div>
-                <label class="form-label">Nombre Completo:</label>
-                <div class="input-container">
-                    <input class="form-control" type="text" required>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <label class="form-label">Fecha de Nacimiento:</label>
-                <div class="input-container">
-                    <input class="form-control" type="date" required>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <label class="form-label">Celular:</label>
-                <div class="input-container">
-                    <input class="form-control" type="text">
-                </div>
-                <label class="form-label">Direccion Email:</label>
-                <div class="input-container">
-                    <input class="form-control" type="email" required>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <label class="form-label">Departamento:</label>
-                <div class="input-container">
-                    <select class="form-control" id="departamento" required>
-                        <option value="" disabled selected hidden>Seleccione un departamento</option>
-                        <option value="Antioquia">Antioquia</option>
-                        <option value="Cundinamarca">Cundinamarca</option>
-                        <option value="Valle del Cauca">Valle del Cauca</option>
-                        <option value="Santander">Santander</option>
-                        <option value="Bolívar">Bolívar</option>
-                        <!-- Agrega más departamentos aquí -->
-                    </select>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <label class="form-label">Municipio:</label>
-                <div class="input-container">
-                    <select class="form-control" id="municipio" required>
-                        <option value="" disabled selected hidden>Seleccione un municipio</option>
-                    </select>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <label class="form-label">Barrio:</label>
-                <div class="input-container">
-                    <input class="form-control" type="text" required>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <label class="form-label">Direccion Residencia:</label>
-                <div class="input-container">
-                    <input class="form-control" type="text" required>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <label class="form-label">Telefono Residencia:</label>
-                <div class="input-container">
-                    <input class="form-control" type="text" required>
-                    <span class="required-asterisk">*</span>
+                <div class="flex-column">
+                    <label class="form-label">Pregunta secreta:</label>
+                    <div class="input-container">
+                        <input asp-for="PreguntaSecreta" class="form-control" type="text" required>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <label class="form-label">Respuesta secreta:</label>
+                    <div class="input-container">
+                        <input asp-for="RespuestaSecreta" class="form-control" type="text" required>
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <p>¿Autorizo el uso de informacion al correo?</p>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" name="emailAuthorization" id="emailYes" autocomplete="off"> 
+                            <label for="emailYes">Si</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="emailAuthorization" id="emailNo" autocomplete="off"> 
+                            <label for="emailNo">No</label>
+                        </div>
+                    </div>
+                    <p>¿Autorizo el uso de informacion al celular?</p>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" name="phoneAuthorization" id="phoneYes" autocomplete="off"> 
+                            <label for="phoneYes">Si</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="phoneAuthorization" id="phoneNo" autocomplete="off"> 
+                            <label for="phoneNo">No</label>
+                        </div>
+                    </div>
+                    <label class="form-label">Clave:</label>
+                    <div class="input-container">
+                        <input asp-for="Clave" class="form-control" type="password" id="clave" required pattern="\d*">
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <div id="claveMessage" class="message"></div>
+                    <label class="form-label">Confirmar Clave:</label>
+                    <div class="input-container">
+                        <input class="form-control" type="password" id="confirmarClave" required pattern="\d*">
+                        <span class="required-asterisk">*</span>
+                    </div>
+                    <div id="confirmarClaveMessage" class="message"></div>
                 </div>
             </div>
-            <div class="flex-column">
-                <label class="form-label">Pregunta secreta:</label>
-                <div class="input-container">
-                    <input class="form-control" type="number" required>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <label class="form-label">Respuesta secreta:</label>
-                <div class="input-container">
-                    <input class="form-control" type="text" required>
-                    <span class="required-asterisk">*</span>
-                </div>
-                <p>¿Autorizo el uso de informacion al correo?</p>
-                <div class="radio-group">
-                    <div>
-                        <input type="radio" name="emailAuthorization" id="emailYes" autocomplete="off"> 
-                        <label for="emailYes">Si</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="emailAuthorization" id="emailNo" autocomplete="off"> 
-                        <label for="emailNo">No</label>
-                    </div>
-                </div>
-                <p>¿Autorizo el uso de informacion al celular?</p>
-                <div class="radio-group">
-                    <div>
-                        <input type="radio" name="phoneAuthorization" id="phoneYes" autocomplete="off"> 
-                        <label for="phoneYes">Si</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="phoneAuthorization" id="phoneNo" autocomplete="off"> 
-                        <label for="phoneNo">No</label>
-                    </div>
-                </div>
-                <label class="form-label">Clave:</label>
-                <div class="input-container">
-                    <input class="form-control" type="password" id="clave" required pattern="\d*">
-                    <span class="required-asterisk">*</span>
-                </div>
-                <div id="claveMessage" class="message"></div>
-                <label class="form-label">Confirmar Clave:</label>
-                <div class="input-container">
-                    <input class="form-control" type="password" id="confirmarClave" required pattern="\d*">
-                    <span class="required-asterisk">*</span>
-                </div>
-                <div id="confirmarClaveMessage" class="message"></div>
+            <div class="botonConfirmar">
+                <button type="submit" id="submitButton" class="custom-button">
+                    <i class="fas fa-check"></i> Enviar
+                </button>
+                <button type="button" id="cancelButton" class="custom-button" onclick="window.location.href='/Login'">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
             </div>
-        </div>
-<div class="botonConfirmar">
-    <button id="submitButton" class="custom-button" disabled>
-        <i class="fas fa-check"></i> Enviar
-    </button>
-    <button id="cancelButton" class="custom-button" onclick="window.location.href='/Login'">
-        <i class="fas fa-times"></i> Cancelar
-    </button>
-</div>
+        </form>
     </div>
 </div>
 
 <script src="~/js/register.js"></script>
-

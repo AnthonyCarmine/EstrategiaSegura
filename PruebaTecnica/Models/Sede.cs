@@ -18,8 +18,7 @@ namespace PruebaTecnica.Models
     [Required]
     public string Ubicacion { get; set; }
     
-    [Required]
-    public int CapacidadTotal { get; set; }
-}
+
+    }
 }
 

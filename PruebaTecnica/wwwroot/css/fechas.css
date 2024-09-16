@@ -1,16 +1,15 @@
-/* General styles for the page */
 body {
-    background-color: #f8f9fa; /* Set a light grey background color */
-    margin: 0; /* Ensure no margin is applied to the body */
-    padding: 0; /* Ensure no padding is applied to the body */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .container {
-    margin-top: 0; /* Remove top margin */
-    padding: 0.5cm 1cm; /* Add padding: 0.5cm top/bottom, 1cm left/right */
-    max-width: 100%; /* Ensure container does not exceed screen width */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    margin-top: 0;
+    padding: 0.5cm 1cm;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .title-color {
@@ -30,24 +29,21 @@ body {
     background: linear-gradient(45deg, #9F1B26, #B32730);
 }
 
-/* Styles for the images to ensure they have the same size */
 .same-size {
     width: 100%;
-    height: 100px; /* Set a smaller fixed height */
+    height: 100px;
     object-fit: cover;
 }
 
-/* Style for the ubicacion image */
 .ubicacion-img {
-    width: 80px; /* Set a slightly smaller width */
-    height: 80px; /* Set a slightly smaller height to make it square */
-    object-fit: cover; /* Ensure the image covers the area */
-    margin-left: 10px; /* Add some space between the icon and the text */
-    border: 2px solid #ccc; /* Add a border */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-left: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Styles for the table */
 .table-container {
     overflow-x: auto;
 }
@@ -86,7 +82,6 @@ body {
     background-color: rgba(0, 0, 0, 0.075);
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .col-md-3, .col-md-6 {
         flex: 0 0 100%;
@@ -94,63 +89,53 @@ body {
     }
 }
 
-/* Centering the div with the image and text */
 .mt-3.d-flex.align-items-center.justify-content-center {
     justify-content: center;
 }
 
-/* Styles for the description */
 .descripcion-container {
-    max-height: 650px; /* Set a larger fixed height */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 10px; /* Optional: Add some padding */
+    max-height: 650px;
+    overflow-y: auto;
+    padding: 10px;
 }
 
-/* Set color #BF353D for h3 elements */
 .red-title {
     color: #BF353D;
 }
 
-/* Styles for smaller input fields */
 input {
-    height: 30px; /* Set a smaller fixed height */
-    padding: 5px; /* Reduce padding */
-    font-size: 14px; /* Optional: Adjust font size */
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
 }
 
-/* Set background color for content */
 .content {
     background-color: #EEEEEE;
 }
 
-/* Ensure no margin or padding for partial elements */
 partial {
     margin: 0;
     padding: 0;
 }
 
-/* Ensure images are responsive */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Styles for icons */
 .icon {
-    width: 24px; /* Set the width of the icon */
-    height: 24px; /* Set the height of the icon */
-    cursor: pointer; /* Change cursor to pointer */
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
-/* Styles for the modal body */
 .modal-body {
     background: linear-gradient(to bottom, #EAEAEA, #FFFFFF);
 }
 
-/* Styles for the modal header */
 .modal-header {
     background: linear-gradient(to bottom, #FFFFFF, #ECECEC, #D4D4D4);
-    padding: 5px 10px; /* Reduce padding to make the section less tall */
+    padding: 5px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,18 +143,17 @@ img {
 
 .modal-title {
     margin: 0;
-    font-size: 1.25rem; /* Adjust font size if necessary */
+    font-size: 1.25rem;
 }
 
 .close {
     padding: 0;
     background: none;
     border: none;
-    font-size: 1.5rem; /* Adjust font size if necessary */
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
-/* Custom margin class */
 .custom-margin {
-    margin: 0.5cm 1cm; /* Add 0.5cm top/bottom and 1cm left/right margin */
+    margin: 0.5cm 1cm;
 }

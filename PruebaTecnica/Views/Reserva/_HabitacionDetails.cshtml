@@ -1,0 +1,21 @@
+@model PruebaTecnica.Models.Habitacion
+
+<div>
+    <p><i class="fas fa-check"></i> @Model.Descripcion</p>
+    <div class="row">
+        <div class="col-md-6">
+            <p><i class="fas fa-check"></i> Cama doble</p>
+            <p><i class="fas fa-check"></i> Camarote</p>
+            <p><i class="fas fa-check"></i> Baño</p>
+            <p><i class="fas fa-check"></i> Nevera</p>
+            <p><i class="fas fa-check"></i> Televisor</p>
+            <p><i class="fas fa-check"></i> Terraza cubierta</p>
+        </div>
+        <div class="col-md-6">
+            <p><i class="fas fa-check"></i> Habitación/Alojamiento: @Model.NombreHabitacion</p>
+            <p><i class="fas fa-check"></i> Capacidad: @Model.CapacidadMaxima</p>
+            <p><i class="fas fa-check"></i> Tarifa Día Ordinario: @Model.TarifaDiaOrdinario</p>
+            <p><i class="fas fa-check"></i> Tarifa Día Especial: @Model.TarifaDiaEspecial</p>
+        </div>
+    </div>
+</div>
